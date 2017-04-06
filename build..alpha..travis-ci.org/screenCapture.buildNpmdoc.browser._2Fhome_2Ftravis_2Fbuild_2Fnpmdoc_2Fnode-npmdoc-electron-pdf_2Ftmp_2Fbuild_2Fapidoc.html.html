@@ -1,0 +1,693 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/fraserxu/electron-pdf">electron-pdf (v1.2.0)</a>
+</h1>
+<h4>A command line tool to generate PDF from URL, HTML or Markdown files</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.electron-pdf">module electron-pdf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.logger">
+            function <span class="apidocSignatureSpan">electron-pdf.</span>logger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">electron-pdf.</span>args</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">electron-pdf.</span>windowMaid</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">electron-pdf.</span>windowTailor</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.electron-pdf.args">module electron-pdf.args</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.args.encode">
+            function <span class="apidocSignatureSpan">electron-pdf.args.</span>encode
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.args.urlWithArgs">
+            function <span class="apidocSignatureSpan">electron-pdf.args.</span>urlWithArgs
+            <span class="apidocSignatureSpan">(urlOrFile, args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.electron-pdf.logger">module electron-pdf.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.logger.logger">
+            function <span class="apidocSignatureSpan">electron-pdf.</span>logger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.logger.debug">
+            function <span class="apidocSignatureSpan">electron-pdf.logger.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.logger.error">
+            function <span class="apidocSignatureSpan">electron-pdf.logger.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.logger.info">
+            function <span class="apidocSignatureSpan">electron-pdf.logger.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.logger.set">
+            function <span class="apidocSignatureSpan">electron-pdf.logger.</span>set
+            <span class="apidocSignatureSpan">(loggerObj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.electron-pdf.windowMaid">module electron-pdf.windowMaid</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.windowMaid.cleanupHungWindows">
+            function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>cleanupHungWindows
+            <span class="apidocSignatureSpan">(threshold)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.windowMaid.registerOpenWindow">
+            function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>registerOpenWindow
+            <span class="apidocSignatureSpan">(exportJob)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.windowMaid.removeWindow">
+            function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>removeWindow
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.windowMaid.touchWindow">
+            function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>touchWindow
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.windowMaid.windowCount">
+            function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>windowCount
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.electron-pdf.windowTailor">module electron-pdf.windowTailor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.windowTailor.getPageDimensions">
+            function <span class="apidocSignatureSpan">electron-pdf.windowTailor.</span>getPageDimensions
+            <span class="apidocSignatureSpan">(pageSize, landscape)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.windowTailor.setWindowDimensions">
+            function <span class="apidocSignatureSpan">electron-pdf.windowTailor.</span>setWindowDimensions
+            <span class="apidocSignatureSpan">(window, pageSize, landscape)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">electron-pdf.windowTailor.</span>HTML_DPI</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.electron-pdf" id="apidoc.module.electron-pdf">module electron-pdf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.logger" id="apidoc.element.electron-pdf.logger">
+        function <span class="apidocSignatureSpan">electron-pdf.</span>logger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function info() {
+  loggers[LEVELS.info](...arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.electron-pdf.args" id="apidoc.module.electron-pdf.args">module electron-pdf.args</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.args.encode" id="apidoc.element.electron-pdf.args.encode">
+        function <span class="apidocSignatureSpan">electron-pdf.args.</span>encode
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(args) {
+  assert.strictEqual(typeof args, 'object', 'args must be an object')
+  // stringify the args
+  args = args ? encodeURIComponent(JSON.stringify(args)) : ''
+  return args
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.args.urlWithArgs" id="apidoc.element.electron-pdf.args.urlWithArgs">
+        function <span class="apidocSignatureSpan">electron-pdf.args.</span>urlWithArgs
+        <span class="apidocSignatureSpan">(urlOrFile, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function urlWithArgs(urlOrFile, args) {
+  args = encode(args)
+
+  var u
+  if (urlOrFile.indexOf('http') === 0) {
+    var urlData = url.parse(urlOrFile)
+    var hash = urlData.hash || args ? args : undefined
+    u = url.format(assign(urlData, { hash: hash }))
+  } else { // presumably a file url
+    u = url.format({
+      protocol: 'file',
+      pathname: path.resolve(urlOrFile),
+      slashes: true,
+      hash: args
+    })
+  }
+
+  return u
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+_loadURL (window, url) {
+  const loadOpts = {}
+  if (this.args.disableCache) {
+    loadOpts.extraHeaders += 'pragma: no-cache\n'
+  }
+  this.emit(`${RENDER_EVENT_PREFIX}loadurl`, { url: url })
+  window.loadURL(wargs.<span class="apidocCodeKeywordSpan">urlWithArgs</span>(url, {}), loadOpts)
+}
+
+// Page Load &amp; Rendering
+
+/**
+ * Injects a wait if defined before calling the generateFunction
+ * Electron will apply the javascript we provide after the page is loaded,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.electron-pdf.logger" id="apidoc.module.electron-pdf.logger">module electron-pdf.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.logger.logger" id="apidoc.element.electron-pdf.logger.logger">
+        function <span class="apidocSignatureSpan">electron-pdf.</span>logger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function info() {
+  loggers[LEVELS.info](...arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.logger.debug" id="apidoc.element.electron-pdf.logger.debug">
+        function <span class="apidocSignatureSpan">electron-pdf.logger.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function debug() {
+  loggers[LEVELS.debug](...arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.logger.error" id="apidoc.element.electron-pdf.logger.error">
+        function <span class="apidocSignatureSpan">electron-pdf.logger.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function error() {
+  loggers[LEVELS.error](...arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.logger.info" id="apidoc.element.electron-pdf.logger.info">
+        function <span class="apidocSignatureSpan">electron-pdf.logger.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function info() {
+  loggers[LEVELS.info](...arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.logger.set" id="apidoc.element.electron-pdf.logger.set">
+        function <span class="apidocSignatureSpan">electron-pdf.logger.</span>set
+        <span class="apidocSignatureSpan">(loggerObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function set(loggerObj) {
+  if (loggerObj) {
+    loggers[LEVELS.error] = loggerObj.error || loggers[LEVELS.error]
+    loggers[LEVELS.info] = loggerObj.info || loggers[LEVELS.info]
+    loggers[LEVELS.debug] = loggerObj.debug || loggers[LEVELS.debug]
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    cookies.split(';').forEach(function (c) {
+      const nameValue = c.split('=')
+      const cookie = {
+        url: urlObj.protocol + '//' + urlObj.host,
+        name: nameValue[0],
+        value: nameValue[1]
+      }
+      windowSessionCookies.<span class="apidocCodeKeywordSpan">set</span>(cookie, function (err) {
+        if (err) {
+          errorLogger(err)
+        }
+      })
+    })
+  }
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.electron-pdf.windowMaid" id="apidoc.module.electron-pdf.windowMaid">module electron-pdf.windowMaid</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.windowMaid.cleanupHungWindows" id="apidoc.element.electron-pdf.windowMaid.cleanupHungWindows">
+        function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>cleanupHungWindows
+        <span class="apidocSignatureSpan">(threshold)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cleanupHungWindows(threshold) {
+  const now = Date.now()
+  const th = threshold || HUNG_WINDOW_THRESHOLD
+  const hungWindows = _.filter(windowCache, e =&gt; now - e.lastUsed &gt;= th)
+
+  logger(`checking hung windows-&gt; ` +
+    `total windows: ${_.size(windowCache)}, ` +
+    `hung windows: ${_.size(hungWindows)}, ` +
+    `threshold: ${th}`)
+
+  _.forEach(hungWindows, e =&gt; {
+    logger('destroying hung window: ', e.id)
+    const destroyable = e.job &amp;&amp; e.window &amp;&amp; !e.window.isDestroyed()
+    if (destroyable) {
+      const windowContext = {
+        id: e.window.id,
+        lifespan: now - e.lastUsed
+      }
+      e.job.emit('window.termination', windowContext)
+      delete windowCache[e.id]
+      e.job.destroy()
+    } else {
+      logger('Warning: a window was left in the cache that was already destroyed, do proper cleanup')
+      delete windowCache[e.id]
+    }
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.windowMaid.registerOpenWindow" id="apidoc.element.electron-pdf.windowMaid.registerOpenWindow">
+        function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>registerOpenWindow
+        <span class="apidocSignatureSpan">(exportJob)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerOpenWindow(exportJob) {
+  const w = exportJob.window
+  windowCache[w.id] = {id: w.id, job: exportJob, window: w, lastUsed: Date.now()}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+   * Render markdown or html to pdf
+   */
+  render () {
+this.emit(`${RENDER_EVENT_PREFIX}start`)
+this._launchBrowserWindow()
+const win = this.window
+WindowMaid.<span class="apidocCodeKeywordSpan">registerOpenWindow</span>(this)
+
+// TODO: Check for different domains, this is meant to support only a single origin
+const firstUrl = this.input[0]
+this._setSessionCookies(this.args.cookies, firstUrl, win.webContents.session.cookies)
+
+const windowEvents = []
+// The same listeners can be used for each resource
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.windowMaid.removeWindow" id="apidoc.element.electron-pdf.windowMaid.removeWindow">
+        function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>removeWindow
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeWindow(id) {
+  delete windowCache[id]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Resources managed:
+ * - this.window
+ */
+destroy () {
+  if (this.window) {
+    try {
+      logger(`destroying job with window: ${this.window.id}`)
+      WindowMaid.<span class="apidocCodeKeywordSpan">removeWindow</span>(this.window.id)
+      this.window.close()
+    } finally {
+      this.window = undefined
+    }
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.windowMaid.touchWindow" id="apidoc.element.electron-pdf.windowMaid.touchWindow">
+        function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>touchWindow
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">touchWindow(id) {
+  windowCache[id].lastUsed = Date.now()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // Browser Setup
+
+  /**
+   *
+   * @private
+   */
+  _initializeWindowForResource (landscape) {
+WindowMaid.<span class="apidocCodeKeywordSpan">touchWindow</span>(this.window.id)
+// Reset the generated flag for each input URL because this same job/window
+// can be reused in this scenario
+this.generated = false
+
+// args can be modified by the client, restore them for each resource
+this.args = _.cloneDeep(this.originalArgs)
+const dim = WindowTailor.setWindowDimensions(this.window, this.args.pageSize, landscape)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.windowMaid.windowCount" id="apidoc.element.electron-pdf.windowMaid.windowCount">
+        function <span class="apidocSignatureSpan">electron-pdf.windowMaid.</span>windowCount
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">windowCount() {
+  return _.size(windowCache)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.electron-pdf.windowTailor" id="apidoc.module.electron-pdf.windowTailor">module electron-pdf.windowTailor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.windowTailor.getPageDimensions" id="apidoc.element.electron-pdf.windowTailor.getPageDimensions">
+        function <span class="apidocSignatureSpan">electron-pdf.windowTailor.</span>getPageDimensions
+        <span class="apidocSignatureSpan">(pageSize, landscape)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPageDimensions(pageSize, landscape) {
+  function pdfToPixels (inches) {
+    return Math.floor(inches * HTML_DPI)
+  }
+
+  const pageDimensions = {
+    'A3': {x: pdfToPixels(11.7), y: pdfToPixels(16.5)},
+    'A4': {x: pdfToPixels(8.3), y: pdfToPixels(11.7)},
+    'A5': {x: pdfToPixels(5.8), y: pdfToPixels(8.3)},
+    'Letter': {x: pdfToPixels(8.5), y: pdfToPixels(11)},
+    'Legal': {x: pdfToPixels(8.5), y: pdfToPixels(14)},
+    'Tabloid': {x: pdfToPixels(11), y: pdfToPixels(17)}
+  }
+
+  let pageDim
+  if (typeof pageSize === 'object') {
+    const xInches = pageSize.width / MICRONS_INCH_RATIO
+    const yInches = pageSize.height / MICRONS_INCH_RATIO
+
+    pageDim = {
+      x: pdfToPixels(xInches),
+      y: pdfToPixels(yInches)
+    }
+  } else {
+    pageDim = pageDimensions[pageSize]
+    if (landscape &amp;&amp; pageDim.x &lt; pageDim.y) {
+      pageDim = {x: pageDim.y, y: pageDim.x}
+    }
+  }
+  return pageDim
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * see
+   * http://electron.atom.io/docs/api/browser-window/#new-browserwindowoptions
+   * @param args
+   * @returns {Object} for BrowserWindow constructor
+   * @private
+   */
+  _getBrowserConfiguration (args) {
+const pageDim = WindowTailor.<span class="apidocCodeKeywordSpan">getPageDimensions</span>(args.pageSize, args.landscape)
+
+const defaultOpts = {
+  width: pageDim.x,
+  height: pageDim.y,
+  enableLargerThanScreen: true,
+  show: false,
+  center: true, // Display in center of screen,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.windowTailor.setWindowDimensions" id="apidoc.element.electron-pdf.windowTailor.setWindowDimensions">
+        function <span class="apidocSignatureSpan">electron-pdf.windowTailor.</span>setWindowDimensions
+        <span class="apidocSignatureSpan">(window, pageSize, landscape)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setWindowDimensions(window, pageSize, landscape) {
+  const pageDim = this.getPageDimensions(pageSize, landscape)
+  var size = window.getSize()
+  if (size[0] !== pageDim.x || size[1] !== pageDim.y) {
+    window.setSize(pageDim.x, pageDim.y)
+    return {dimensions: pageDim}
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  WindowMaid.touchWindow(this.window.id)
+  // Reset the generated flag for each input URL because this same job/window
+  // can be reused in this scenario
+  this.generated = false
+
+  // args can be modified by the client, restore them for each resource
+  this.args = _.cloneDeep(this.originalArgs)
+  const dim = WindowTailor.<span class="apidocCodeKeywordSpan">setWindowDimensions</span>(this.window, this.args.pageSize, landscape
+)
+  dim &amp;&amp; this.emit('window.resize', dim)
+}
+
+/**
+ *
+ * @param {String} cookies - ';' delimited cookies, '=' delimited name/value
+ *   pairs
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
