@@ -51,7 +51,7 @@
 
         href="https://github.com/fraserxu/electron-pdf"
 
-    >electron-pdf (v1.2.0)</a>
+    >electron-pdf (v1.3.0)</a>
 </h1>
 <h4>A command line tool to generate PDF from URL, HTML or Markdown files</h4>
 <div class="apidocSectionDiv"><a
@@ -60,6 +60,15 @@
 ><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.electron-pdf">module electron-pdf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.electron-pdf.electron-pdf">
+            function <span class="apidocSignatureSpan"></span>electron-pdf
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
 
         <li>
 
@@ -242,6 +251,111 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.electron-pdf" id="apidoc.module.electron-pdf">module electron-pdf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.electron-pdf.electron-pdf" id="apidoc.element.electron-pdf.electron-pdf">
+        function <span class="apidocSignatureSpan"></span>electron-pdf
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class PDFExporter extends EventEmitter {
+
+  // ------------------------------------------------------------------
+  // ------------------ Public API ------------------------------------
+  // ------------------------------------------------------------------
+<span class="apidocCodeCommentSpan">  /**
+   * @constructor
+   * @param opts
+   * @param {boolean} [opts.resilient=false] set to true to catch and
+   * log all uncaught exception but leave things running
+   * @param {object} [opts.loggers] Allows client to use its own logging implementation
+   */
+</span>  constructor (opts) {
+    super()
+    this.options = opts || {}
+    this.reslientMode = this.options.resilient || false
+    setLogger(this.options.loggers)
+  }
+
+  /**
+   * Starts the electron app
+   *
+   * @fires PDFExporter#charged
+   */
+  start () {
+    electronApp = electron.app
+
+    electronApp.once(&#x27;ready&#x27;, () =&#x3e; {
+      this.isReady = true
+
+      /**
+       * emitted when the application is ready to process exports
+       * @event PDFExporter#charged
+       */
+      this.emit(&#x27;charged&#x27;)
+    })
+
+    electronApp.on(&#x27;window-all-closed&#x27;, function () {
+      if (process.platform !== &#x27;darwin&#x27;) {
+        // electronApp.quit()
+      }
+    })
+
+    // Stop Electron on SIG*
+    process.on(&#x27;exit&#x27;, code =&#x3e; electronApp.exit(code))
+
+    // Passthrough error handler to silence Electron GUI prompt
+    process.on(&#x27;uncaughtException&#x27;, err =&#x3e; {
+      if (this.reslientMode) {
+        console.log(&#x27;Something unexpectedly bad happened &#x27; +
+          &#x27;(but electron-pdf was initialized in resilient mode &#x27; +
+          &#x27;and will remain operational):&#x27;, err)
+      } else {
+        throw err
+      }
+    })
+  }
+
+  stop () {
+    console.log(&#x27;Shutting down...&#x27;)
+    electronApp.quit()
+  }
+
+  /**
+   * Load one or more HTML pages inside of a new window which is closed
+   * as soon as the PDFs are rendered.
+   *
+   * @param input {String} URL for filepath
+   * @param output {String} Filename
+   * @param args {array|Object} command line args - Can be an array of any
+   *   supported args, or an object that is the result of running minimist.
+   * @param options {Object} export args - see ExportJob for list of options.
+   * These are options only supported by the API and not by the CLI
+   */
+  createJob (input, output, args, options) {
+    if (!this.isReady) {
+      const msg = &#x27;Electron is not ready, make sure to register an event listener for &#x22;charged&#x22; and invoke start()&#x27;
+      throw msg
+    }
+
+    // charge.js interprets the args, but this method should also support raw args
+    if (args instanceof Array) {
+      args = minimist(args, argOptions)
+    }
+
+    return new Promise((resolve, reject) =&#x3e; {
+      source.resolve(input, args).then(sources =&#x3e; {
+        resolve(new ExportJob(sources, output, args, options))
+      })
+    })
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -452,13 +566,13 @@ _loadURL (window, url) {
   const th = threshold || HUNG_WINDOW_THRESHOLD
   const hungWindows = _.filter(windowCache, e =&#x3e; now - e.lastUsed &#x3e;= th)
 
-  logger(`checking hung windows-&#x3e; ` +
+  debugLogger(`checking hung windows-&#x3e; ` +
     `total windows: ${_.size(windowCache)}, ` +
     `hung windows: ${_.size(hungWindows)}, ` +
     `threshold: ${th}`)
 
   _.forEach(hungWindows, e =&#x3e; {
-    logger(&#x27;destroying hung window: &#x27;, e.id)
+    infoLogger(&#x27;destroying hung window: &#x27;, e.id)
     const destroyable = e.job &#x26;&#x26; e.window &#x26;&#x26; !e.window.isDestroyed()
     if (destroyable) {
       const windowContext = {
@@ -469,7 +583,7 @@ _loadURL (window, url) {
       delete windowCache[e.id]
       e.job.destroy()
     } else {
-      logger(&#x27;Warning: a window was left in the cache that was already destroyed, do proper cleanup&#x27;)
+      errorLogger(&#x27;a window was left in the cache that was already destroyed, do proper cleanup&#x27;)
       delete windowCache[e.id]
     }
   })
